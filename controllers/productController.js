@@ -6,7 +6,7 @@ const asyncHandler = require('express-async-handler');
 
 
 const getProduct = asyncHandler(async(req, res) => { 
-    const productList = await productModel.find().select('name image    ');
+    const productList = await productModel.find().select('name image price');
 
     if(!productList){
         res.status(500).json({success:false})
