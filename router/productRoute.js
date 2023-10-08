@@ -37,15 +37,23 @@
 
 
 const express = require("express");
-const { getProduct, postProduct, getSingProduct } = require("../controllers/productController")
+const { getProduct, postProduct, getSingProduct, putPro, deleteProd, getSpecificNum, getFeatured } = require("../controllers/productController")
 // const { protect } = require("../middleware/authMiddleware");
 const productRouter = express.Router()
 
 
 productRouter.get("/getPro", getProduct);
 productRouter.get("/:id", getSingProduct);
+productRouter.get("/count/leng", getSpecificNum);
+productRouter.get("/featured", getFeatured);
+
+
 
 productRouter.post("/postPro", postProduct);
+productRouter.put("/:id", putPro);
+productRouter.delete('/:id', deleteProd);
+
+
 
 
 

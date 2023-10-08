@@ -41,7 +41,7 @@ const putCat = async (req, res) => {
     const category = await categoryModel.findByIdAndUpdate(req.params.id,
         {
             name: req.body.name,
-            icon: req.body.icon,
+            icon: req.body.icon || category.icon,
             color: req.body.color  
         },
         {
